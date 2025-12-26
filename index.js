@@ -160,23 +160,14 @@ btn_task.addEventListener("click", ()=>{
     savebtn.className = "save";
 
     savebtn.addEventListener("click", ()=>{
-      if(editinput.value.trim()=== ""){
-        alert("Enter Any Statement Here...");
-        
-      }
-      else{
-         li.replaceChild(savebtn, edit_btn);
-      }
-    })
-
-    li.replaceChild(editinput, span);
-   
-
-    savebtn.addEventListener("click", ()=>{
+      if(editinput.value.trim()==="") return alert("Enter Any Statement Here...");
       span.innerText = editinput.value;
       li.replaceChild(span, editinput);
       li.replaceChild(edit_btn, savebtn);
     });
+
+    li.replaceChild(editinput, span);
+    li.replaceChild(savebtn, edit_btn);
   });
 
   del_btn.addEventListener("click", ()=>{
